@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#parchment {
+  background-image: url("/paper-texture.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-shadow: #bab5aa 1px 0 10px;
+}
