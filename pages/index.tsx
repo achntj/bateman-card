@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +15,7 @@ export default function Home() {
   const [phone, setPhone] = useState("");
   const [cardURL, setCardURL] = useState("");
 
-  const submitForm = async (e) => {
+  const submitForm = async (e: FormEvent) => {
     e.preventDefault();
     const queryParams = Object.entries({
       firstName,
