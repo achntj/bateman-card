@@ -3,6 +3,7 @@ import { Balthazar } from "next/font/google";
 import { useEffect } from "react";
 import QRCode from "qrcode.react";
 import copy from "clipboard-copy";
+import Link from "next/link";
 
 const copper = Balthazar({ subsets: ["latin"], weight: "400" });
 
@@ -63,9 +64,29 @@ const Card: React.FC<CardProps> = () => {
 
   return (
     <>
+      <Link href="/" className="flex items-center space-x-2 my-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+
+        <h3 className="text-base underline underline-offset-2">
+          Generate More
+        </h3>
+      </Link>
       <div
         id="parchment"
-        className={`bg-white ${copper.className} shadow-md p-10 w-96 mx-auto mt-12 text-center relative`}
+        className={`bg-white ${copper.className} text-black shadow-md p-10 max-w-96 mx-auto mt-12 text-center relative`}
       >
         {/* Phone (Top Left) */}
         <p className="text-gray-600 absolute top-4 left-4">{checkedPhone}</p>
@@ -90,7 +111,11 @@ const Card: React.FC<CardProps> = () => {
       </div>
       {/* QR Code */}
       <div className="mt-12">
-        <QRCode value={currentURL} size={100} />
+        <QRCode
+          className="border border-stone-500"
+          value={currentURL}
+          size={100}
+        />
       </div>
 
       <div className="flex flex-col w-fit">
@@ -106,7 +131,7 @@ const Card: React.FC<CardProps> = () => {
             link.download = "business_card_qr_code.png";
             link.click();
           }}
-          className="mt-4 p-2 bg-blue-500 text-white rounded font-sans"
+          className="mt-4 font-sans text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >
           Download QR Code
         </button>
@@ -116,7 +141,7 @@ const Card: React.FC<CardProps> = () => {
           onClick={() => {
             copy(cardURL); // Copy the card URL to clipboard on button click
           }}
-          className="mt-4 p-2 bg-green-500 text-white rounded font-sans"
+          className="mt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >
           Copy Link
         </button>

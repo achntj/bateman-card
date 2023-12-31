@@ -9,3 +9,7 @@
   background-repeat: no-repeat;
   text-shadow: #bab5aa 1px 0 10px;
 }
+
+body {
+  @apply bg-stone-900 text-white;
+}

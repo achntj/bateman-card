@@ -43,6 +43,7 @@ export default function Home() {
           type="text"
           name="firstname"
           id="firstname"
+          className="bg-transparent outline-none"
         />
 
         <label htmlFor="lastname">Last Name</label>
@@ -52,6 +53,7 @@ export default function Home() {
           type="text"
           name="lastname"
           id="lastname"
+          className="bg-transparent outline-none"
         />
 
         <label htmlFor="company">Company</label>
@@ -61,6 +63,7 @@ export default function Home() {
           type="text"
           name="company"
           id="company"
+          className="bg-transparent outline-none"
         />
 
         <label htmlFor="position">Position</label>
@@ -70,6 +73,7 @@ export default function Home() {
           type="text"
           name="position"
           id="position"
+          className="bg-transparent outline-none"
         />
 
         <label htmlFor="address">Address</label>
@@ -79,6 +83,7 @@ export default function Home() {
           type="text"
           name="address"
           id="address"
+          className="bg-transparent outline-none"
         />
 
         <label htmlFor="phone">Phone</label>
@@ -88,15 +93,19 @@ export default function Home() {
           type="tel"
           name="phone"
           id="phone"
+          className="bg-transparent outline-none"
         />
 
-        <button type="submit" className="max-w-fit my-4 rounded bg-neutral-100">
+        <button
+          type="submit"
+          className="max-w-fit my-4 p-4 rounded bg-stone-800"
+        >
           Generate Business Card
         </button>
       </form>
 
       <h2 className="mt-10 font-bold text-xl">What is this?</h2>
-      <p>
+      <p className="leading-loose text-stone-400">
         Welcome to the epitome of sophistication, where business cards transcend
         mundanity into the realm of Batemanesque brilliance. This is not just a
         business card generator; it's a pulsating vortex of corporate elegance
@@ -105,14 +114,19 @@ export default function Home() {
         In a world where Helvetica is more than just a font and subtle off-white
         coloring is a lifestyle choice, our Business Card Generator takes you on
         a journey through the refined corridors of Pierce & Pierce. Immerse
-        yourself in the essence of VP-level charisma and let your business card
-        scream success louder than a chainsaw in an abandoned building.
+        yourself in the essence of{" "}
+        <strong className="text-stone-200"> VP-level charisma</strong> and let
+        your business card scream success louder than a chainsaw in an abandoned
+        building.
         <br />
-        Unleash your inner Bateman. Generate a card that's as sharp as an axe,
-        as crisp as a new stack of hundred-dollar bills, and as unforgettable as
-        that business meeting you vaguely remember. This is not just a card;
-        it's a status symbol, a testament to your unassailable position in the
-        hierarchy of immaculate taste.
+        <strong className="text-stone-200">
+          Unleash your inner Bateman.
+        </strong>{" "}
+        Generate a card that's as sharp as an axe, as crisp as a new stack of
+        hundred-dollar bills, and as unforgettable as that business meeting you
+        vaguely remember. This is not just a card; it's a status symbol, a
+        testament to your unassailable position in the hierarchy of immaculate
+        taste.
         <br />
         So, strap in, adjust your tie, and let the cardstock symphony begin.
         Because in this game of business, the only thing sharper than your card
