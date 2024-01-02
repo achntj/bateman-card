@@ -58,10 +58,6 @@ const Card: React.FC<CardProps> = () => {
   const currentURL = typeof window !== "undefined" ? window.location.href : "";
   const cardURL = `${currentURL}`;
 
-  useEffect(() => {
-    copy(cardURL); // Copy the card URL to clipboard when the component mounts
-  }, [cardURL]);
-
   return (
     <>
       <Link href="/" className="flex items-center space-x-2 my-4">
